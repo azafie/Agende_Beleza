@@ -1,0 +1,77 @@
+<!-- public/views/admin/temas.ejs -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temas Cadastrados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tema-lista {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .tema-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tema-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tema-item p {
+            margin: 5px 0;
+        }
+
+        .tema-item .color-box {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Temas Cadastrados</h1>
+</header>
+
+<main>
+    <section class="tema-lista">
+        <% temas.forEach(tema => { %>
+            <div class="tema-item" style="background-color: <%= tema.cor_fundo %>; color: <%= tema.cor_texto %>;">
+                <h2><%= tema.nome %></h2>
+                <p><strong>Cor de Fundo:</strong> <span class="color-box" style="background-color: <%= tema.cor_fundo %>;"></span></p>
+                <p><strong>Cor do Texto:</strong> <span class="color-box" style="background-color: <%= tema.cor_texto %>;"></span></p>
+                <p><strong>Cor do Título:</strong> <span class="color-box" style="background-color: <%= tema.cor_titulo %>;"></span></p>
+                <p><strong>Fonte do Texto:</strong> <%= tema.fonte_texto %></p>
+                <p><strong>Fonte do Título:</strong> <%= tema.fonte_titulo %></p>
+                <p><strong>Cor Clip Path:</strong> <span class="color-box" style="background-color: <%= tema.cor_clip_path %>;"></span></p>
+            </div>
+        <% }) %>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- public/views/admin/formTema.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastrar Tema</title>
+</head>
+<body>
+  <h1>Cadastrar Tema</h1>
+  <form action="/admin/tema" method="POST">
+    <label>Nome do Tema:</label>
+    <input type="text" name="nome" required /><br><br>
+
+    <label>Cor de Fundo:</label>
+    <input type="color" name="cor_fundo" required /><br><br>
+
+    <label>Cor do Texto:</label>
+    <input type="color" name="cor_texto" required /><br><br>
+
+    <label>Cor dos Títulos:</label>
+    <input type="color" name="cor_titulo" required /><br><br>
+
+    <label>Cor Clip-Path:</label>
+    <input type="color" name="cor_clip_path" required /><br><br>
+
+    <label>Fonte do Texto:</label>
+    <select name="fonte_texto" required>
+      <option value="Arial">Arial</option>
+      <option value="'Open Sans', sans-serif">Open Sans</option>
+      <option value="'Roboto', sans-serif">Roboto</option>
+      <option value="'Courier New', monospace">Courier New</option>
+      <option value="'Times New Roman', serif">Times New Roman</option>
+    </select><br><br>
+
+    <label>Fonte dos Títulos:</label>
+    <select name="fonte_titulo" required>
+      <option value="Arial">Arial</option>
+      <option value="'Playfair Display', serif">Playfair Display</option>
+      <option value="'Montserrat', sans-serif">Montserrat</option>
+      <option value="'Georgia', serif">Georgia</option>
+      <option value="'Lobster', cursive">Lobster</option>
+    </select><br><br>
+
+    <button type="submit">Salvar Tema</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex; /* Para alinhar o menu, conteúdo e faixa lateral */
+}
+
+.fundo {
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Abaixo do menu e da faixa */
+    overflow: hidden;
+}
+
+.forma {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.05); /* Cor levemente transparente para as formas */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.forma-grande {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 15%;
+}
+
+.forma-media {
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    right: 25%;
+}
+
+.forma-pequena {
+    width: 60px;
+    height: 60px;
+    bottom: 15%;
+    left: 35%;
+}
+
+.forma-media-2 {
+    width: 120px;
+    height: 120px;
+    bottom: 35%;
+    right: 10%;
+}
+
+.forma-pequena-2 {
+    width: 80px;
+    height: 80px;
+    top: 5%;
+    right: 40%;
+}
+
+/* Estilos para o menu lateral */
+.menu-lateral {
+    background-color: #343a40; /* Cor escura para o menu */
+    color: white;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -200px; /* Inicialmente escondido */
+    overflow-y: auto;
+    padding-top: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1; /* Acima do fundo */
+}
+
+.menu-lateral.aberto {
+    left: 0;
+}
+
+.faixa-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura da faixa no menu */
+    overflow: hidden;
+}
+
+.forma-menu {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.1); /* Cor clara para destacar */
+}
+
+.menu-item {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding-left: 40px;
+}
+
+.forma-item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.15); /* Cor clara para destacar */
+}
+
+.menu-item:hover {
+    background-color: #555;
+}
+
+/* Estilos para a faixa lateral direita */
+.faixa-lateral {
+    background-color: #343a40; /* Mesma cor do menu */
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -200px; /* Inicialmente escondida */
+    transition: right 0.3s ease-in-out;
+    z-index: 1; /* Acima do fundo */
+}
+
+.faixa-lateral.aberta {
+    right: 0;
+}
+
+.faixa-direita {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Altura da faixa */
+    overflow: hidden;
+}
+
+.forma-faixa {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor escura para destacar */
+}
+
+/* Estilos para o conteúdo principal */
+.conteudo-principal {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 20px;
+    margin-left: 200px; /* Sempre espaço para o menu */
+    margin-right: 0; /* Sem faixa direita no início */
+    transition: margin-left 0.3s ease-in-out, margin-right 0.3s ease-in-out;
+}
+
+body.menu-aberto .conteudo-principal {
+    margin-left: 200px; /* Mantém espaço do menu */
+    margin-right: 200px; /* Espaço para a faixa lateral quando menu aberto */
+}
+
+/* Estilos para títulos e textos */
+.titulo-principal {
+    color: #333;
+}
+
+.texto-secundario {
+    color: #777;
+}
+
+.titulo-secundario {
+    color: #555;
+}
+
+/* Estilos para o botão de abrir o menu */
+.abrir-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #343a40;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2; /* Acima do menu */
+}
+
+/* Estilos para o link de login */
+.link-login {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #007bff; /* Cor azul padrão de link */
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 2; /* Acima da faixa */
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}

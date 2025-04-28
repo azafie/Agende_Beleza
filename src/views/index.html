@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salão de Beleza</title>
+  
+  <!-- Inclusão do Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Seu CSS personalizado -->
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Bem-vindo ao nosso Salão!</h1>
+    <p>Agende seu horário online</p>
+
+    <form action="/agendar" method="GET">
+      <label for="cliente">Nome do Cliente:</label>
+      <input type="text" id="cliente" name="cliente" class="form-control">
+      <button type="submit" class="btn btn-primary mt-3">Agendar</button>
+    </form>
+  </div>
+
+  <!-- Inclusão do jQuery -->
+  <script src="/js/jquery.min.js"></script>
+  <!-- Seu JS personalizado -->
+  <script src="/js/script.js"></script>
+
+</body>
+</html>
